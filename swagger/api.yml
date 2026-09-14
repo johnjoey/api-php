@@ -1560,6 +1560,11 @@ definitions:
         type: string
         description: |
           ID for the organisation this account belongs to on the StuRents website
+      inbound_data_enabled:
+        type: boolean
+        description: |
+          True if the landlord has given the channel permission to send
+          enquiries for their listings (e.g. via POST /enquiry)
   BankAccount:
     properties:
       descriptor:

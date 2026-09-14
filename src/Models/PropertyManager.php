@@ -34,6 +34,14 @@ class PropertyManager extends SwaggerModel
 	 */
 	protected $company = '';
 
+	/**
+	 * True if the landlord has given the channel permission to send
+	 * enquiries for their listings (e.g. via POST /enquiry)
+	 *
+	 * @var bool
+	 */
+	protected $inbound_data_enabled = false;
+
 
 	/**
 	 * @return string
@@ -118,6 +126,28 @@ class PropertyManager extends SwaggerModel
 	public function setCompany($company)
 	{
 		$this->company = $company;
+
+		return $this;
+	}
+
+
+	/**
+	 * @return bool
+	 */
+	public function getInboundDataEnabled()
+	{
+		return $this->inbound_data_enabled;
+	}
+
+
+	/**
+	 * @param bool $inbound_data_enabled
+	 *
+	 * @return $this
+	 */
+	public function setInboundDataEnabled($inbound_data_enabled)
+	{
+		$this->inbound_data_enabled = $inbound_data_enabled;
 
 		return $this;
 	}
