@@ -705,6 +705,12 @@ paths:
         property/contract term. Auth follows the same channel HMAC pattern as
         other v3 API endpoints (timestamp + SHA256 HMAC of body+timestamp using
         the channel's public key).
+
+        The landlord must have explicitly enabled your channel to send them
+        enquiries before this endpoint will accept requests for their properties.
+        Check the "inbound_data_enabled" field returned by GET /summary for each
+        property manager to see whether this has been enabled - if it is false,
+        requests to this endpoint for that landlord will be rejected with a 403.
       security:
         - Channel: []
           PropertyManager: []

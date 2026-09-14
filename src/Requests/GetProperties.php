@@ -20,12 +20,26 @@ class GetProperties extends SwaggerRequest
 	 * @var null
 	 */
 	public $page;
-	protected static array $query_params = ['page'];
+
+	/**
+	 * Should be set to "3" (defaults to "1.3" if not set and the 1.3 version is deprecated)'
+	 *
+	 *
+	 * @var null
+	 */
+	public $version;
+	protected static array $query_params = ['page', 'version'];
 
 
 	public function setPage($page)
 	{
 		$this->page = $page;
+	}
+
+
+	public function __construct($version)
+	{
+		$this->version = $version;
 	}
 
 
