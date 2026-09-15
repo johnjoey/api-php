@@ -23,6 +23,7 @@ class ChannelClient extends SturentsClient {
 		return [
 			'auth' => $auth,
 			'timestamp' => $timestamp,
+			'channel' => $this->channel_id,
 		];
 	}
 
