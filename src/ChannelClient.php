@@ -18,16 +18,15 @@ class ChannelClient extends SturentsClient {
 
 	protected function authQuery(RequestInterface $request): array{
 		$timestamp = time();
-		$auth = $this->generateAuth((string)$timestamp);
+		$auth = $this->generateAuth((string)$request->getBody(), (string)$timestamp);
 
 		return [
 			'auth' => $auth,
 			'timestamp' => $timestamp,
-			'channel' => $this->channel_id,
 		];
 	}
 
-	private function generateAuth(string $timestamp): string{
-		return hash_hmac('sha256', $timestamp, $this->display_key) ?: '';
+	private function generateAuth(string $json, string $timestamp): string{
+		return hash_hmac('sha256', $json.$timestamp, $this->display_key) ?: '';
 	}
 }
