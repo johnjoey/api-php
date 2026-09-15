@@ -20,7 +20,7 @@ class GetSummary extends SwaggerRequest
 	protected static array $query_params = ['version'];
 
 
-	public function __construct($version)
+	public function setVersion($version)
 	{
 		$this->version = $version;
 	}

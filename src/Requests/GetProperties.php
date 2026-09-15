@@ -37,7 +37,7 @@ class GetProperties extends SwaggerRequest
 	}
 
 
-	public function __construct($version)
+	public function setVersion($version)
 	{
 		$this->version = $version;
 	}
