@@ -40,7 +40,7 @@ class PropertyManager extends SwaggerModel
 	 *
 	 * @var bool
 	 */
-	protected $inbound_data_enabled = false;
+	protected $can_send_enquiries = false;
 
 
 	/**
@@ -134,20 +134,20 @@ class PropertyManager extends SwaggerModel
 	/**
 	 * @return bool
 	 */
-	public function getInboundDataEnabled()
+	public function getCanSendEnquiries()
 	{
-		return $this->inbound_data_enabled;
+		return $this->can_send_enquiries;
 	}
 
 
 	/**
-	 * @param bool $inbound_data_enabled
+	 * @param bool $can_send_enquiries
 	 *
 	 * @return $this
 	 */
-	public function setInboundDataEnabled($inbound_data_enabled)
+	public function setCanSendEnquiries($can_send_enquiries)
 	{
-		$this->inbound_data_enabled = $inbound_data_enabled;
+		$this->can_send_enquiries = $can_send_enquiries;
 
 		return $this;
 	}

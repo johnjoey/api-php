@@ -193,7 +193,7 @@ paths:
 
         The landlord must have explicitly enabled your channel to send them
         enquiries before this endpoint will accept requests for their properties.
-        Check the "inbound_data_enabled" field returned by GET /summary for each
+        Check the "can_send_enquiries" field returned by GET /summary for each
         property manager to see whether this has been enabled - if it is false,
         requests to this endpoint for that landlord will be rejected with a 403.
       security:
@@ -849,7 +849,7 @@ definitions:
         type: string
         description: |
           ID for the organisation this account belongs to on the StuRents website
-      inbound_data_enabled:
+      can_send_enquiries:
         type: boolean
         description: |
           True if the landlord has given the channel permission to send
